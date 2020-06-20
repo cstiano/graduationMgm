@@ -116,10 +116,10 @@ def main(args):
       '\n\nAnother rcssserver may be running on the same port?' \
       '\nTry: \"killall -9 rcssserver\"' \
       %(serverCommand + serverOptions)
-    if not args.headless:
-      monitorCommand = os.path.join(binary_dir, MONITOR_BIN)
-      monitorOptions = ' --connect --port=%i'%(server_port)
-      launch(monitorCommand + monitorOptions, name='monitor')
+    # if not args.headless:
+    #   monitorCommand = os.path.join(binary_dir, MONITOR_BIN)
+    #   monitorOptions = ' --connect --port=%i'%(server_port)
+    #   launch(monitorCommand + monitorOptions, name='monitor')
     # Launch the Trainer
     from Trainer import Trainer
     trainer = Trainer(args=args, server_port=server_port, coach_port=coach_port)
