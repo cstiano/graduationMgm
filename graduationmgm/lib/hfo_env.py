@@ -109,6 +109,7 @@ class HFOEnv(hfo.HFOEnvironment):
         state = self.strict_state(self.getState())
         return state
 
+    # Reward for the offensive - include the implementation here
     def get_reward_off(self, act, next_state, done, status):
         reward = 0
         if done:
