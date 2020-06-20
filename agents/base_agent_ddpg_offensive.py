@@ -25,10 +25,10 @@ class DDPGAgent(Agent):
     def config_env(self, team, port):
         # Include the type of action here (DRIBBLE_TO, SHOOT)
         # self.actions = [hfo.DASH, hfo.TURN, hfo.TACKLE, hfo.KICK]
-        self.actions = [hfo.DRIBBLE_TO, hfo.SHOOT]
+        self.actions = [hfo.GO_TO_BALL, hfo.DRIBBLE_TO, hfo.SHOOT]
         # Same quantity of action for the same of reward
         # self.rewards = [0, 0, 0, 0]
-        self.rewards = [0, 0]
+        self.rewards = [0, 0, 0]
         # is_offensive=False -> is_offensive=True
         self.hfo_env = HFOEnv(self.actions, self.rewards,
                               strict=True, continuous=True, team=team, port=port)

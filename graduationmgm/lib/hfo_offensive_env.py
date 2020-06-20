@@ -80,12 +80,16 @@ class HFOEnv(hfo.HFOEnvironment):
             action = self.action_space.actions[action]
         else:
             action = action[0]
-            if action < 0:
+            if action < -0.5:
                 action = self.action_space.actions[0]
+                self.act(action)
+                act = (action, 0, 0)
+            elif action < 0:
+                action = self.action_space.actions[1]
                 self.act(action, action[1], action[0])
                 act = (action, action[1], action[0])
             else:
-                action = self.action_space.actions[1]
+                action = self.action_space.actions[2]
                 self.act(action)
                 act = (action, 0, 0)
         # self.act(action)
